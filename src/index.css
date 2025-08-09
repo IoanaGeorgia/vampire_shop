@@ -11,3 +11,292 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-size:1.1rem;
+  letter-spacing:1.1px;
+}
+
+:root {
+  --primary-bg: #000;
+  --primary-text:red;
+  --titleRem:2rem;
+  --defaultWhiteText:#ffffffd7;
+  --subtitleSize:1.2rem;
+  --borderDef: 5px dashed var(--primary-text);
+  --defaultSmallSize: 15px;
+}
+
+.homeWrapper{
+  background-color:var(--primary-bg);
+}
+
+.homeWrapper .bannerImg{
+  max-width:700px;
+  width:100%;
+  display: block;
+  margin:auto;
+  padding-top:2rem;
+
+}
+
+.homeWrapper .welcomeWrapper{
+  max-width:1200px;
+  margin:auto;
+  margin-top:2rem;
+  border-top:var(--borderDef);
+  padding:2rem 0rem;
+  color:var(--primary-text);
+  text-align: center;
+}
+
+
+.homeWrapper .welcomeWrapper .title{
+  font-size:var(--titleRem);
+  font-weight:bold;
+  margin-bottom:2rem;
+}
+
+.homeWrapper .bloodTypesWrapper{
+  padding-top:4rem;
+  display:flex;
+  flex-direction: column;
+  gap:2rem;
+  max-width:1100px;
+  margin:auto;
+}
+
+.homeWrapper .bloodTypesWrapper .description{
+  color:var(--defaultWhiteText);
+  margin-bottom:2rem;
+}
+
+.homeWrapper .bloodTypesWrapper .bloodType{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  max-width:80%;
+  margin:auto;
+}
+
+.homeWrapper .bloodTypesWrapper .bloodType img{
+  width:150px;
+}
+
+.homeWrapper .bloodTypesWrapper .bloodType div p{
+  color:var(--defaultWhiteText);
+  font-size:var(--defaultSmallSize);
+  line-height:25px;
+
+}
+
+.homeWrapper .bloodTypesWrapper .bloodType div p.title{
+  font-size:1rem;
+  color:var(--primary-text);
+  font-weight: bold;
+  margin-bottom:1rem;
+}
+
+
+.aboutCompany{
+  max-width:1200px;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:3rem;
+  padding:4rem 0;
+  color:var(--defaultWhiteText);
+  border-top:var(--borderDef);
+  margin-top:4rem;
+  flex-wrap: wrap;
+}
+
+.aboutCompany div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:0.5rem;
+  font-size:var(--defaultSmallSize);
+}
+
+.aboutCompany div img{
+  max-width:50px;
+}
+
+.contactUs{
+  padding-top:2rem;
+  max-width:1200px;
+  margin:auto;
+  margin-top:2rem;
+  font-size:var(--defaultSmallSize);
+  border-top:var(--borderDef);
+
+}
+
+.contactUs p{
+  color:var(--defaultWhiteText);
+  font-size:var(--defaultSmallSize);
+  max-width:800px;
+  margin:auto;
+}
+
+.contactUs form{
+  max-width: 300px;
+  margin:auto;
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding-bottom: 2rem;
+    color:var(--defaultWhiteText);
+    position: relative;
+
+}
+
+.contactUs form:after{
+  content:"";
+  position: absolute;
+  top:10px;
+  right:-20px;
+  width:110px;
+  height:300px;
+  background-image: url(https://i.giphy.com/ZFsl3fY0lF8j8jUi4Z.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+
+}
+
+.contactUs form label{
+      font-size: var(--defaultSmallSize);
+}
+
+.contactUs form input{
+  background-color: transparent;
+  border:var(--borderDef);
+  border-radius:10px;
+  height:50px;
+  color:var(--defaultWhiteText);
+  margin-top:1rem;
+  padding:5px;
+    font-size: var(--defaultSmallSize);
+    min-width:300px;
+}
+
+.contactUs form input:focus, .contactUs form input:focus{
+  outline: none;
+}
+
+.contactUs form button{
+    background-color: transparent;
+    border:none;
+    text-decoration: underline;
+    font-size:var(--defaultSmallSize);
+    color:var(--primary-text);
+    cursor: pointer;
+
+}
+
+.contactUs form button:hover{
+  transform: scale(1.5);
+}
+
+.contactUs .title{
+  font-size:var(--subtitleSize);
+  color:var(--primary-text);
+  max-width:100%;
+}
+
+.contactUs .phone{
+      margin-top:2rem;
+      margin-bottom:2rem;
+      font-weight: bolder;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:20px;
+      font-size:1.2rem;
+      margin-bottom:3rem;
+    
+}
+
+.contactUs .phone img{
+  max-width:70px;
+}
+
+.contactUs .small{
+  font-size:11px;
+  max-width:1200px;
+}
+
+.bloodAdvice{
+
+  max-width:1200px;
+  margin:auto;
+  margin-top:2rem;
+  padding:2rem 0rem;
+  padding-bottom: 4rem;
+}
+
+.bloodAdvice p{
+  color:var(--primary-text);
+  font-size:var(--subtitleSize);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:1rem;
+}
+
+.bloodAdvice p img{
+  max-width:50px;
+}
+
+.bloodAdvice ul{
+  max-width:800px;
+  padding-top:2rem;
+  margin:auto;
+}
+
+.bloodAdvice li{
+  list-style-type:circle;
+  color:var(--defaultWhiteText);
+  margin-top:1rem;
+  line-height:1.5rem;
+  font-size:var(--defaultSmallSize);
+}
+.bloodAdvice li span{
+  color:var(--primary-text);
+  font-size: inherit;
+}
+
+@media(max-width:1200px){
+  .homeWrapper{
+    padding:0 30px;
+  }
+  .homeWrapper .bloodTypesWrapper .bloodType {
+    max-width: 100%;
+  
+  }
+  .homeWrapper .bloodTypesWrapper {
+  gap:4rem;
+  }
+  .aboutCompany{
+    justify-content: space-around;
+  }
+  .bloodAdvice ul{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+}
+
+@media(max-width:576px){
+    .homeWrapper .bloodTypesWrapper .bloodType {
+      flex-direction: column;
+  }
+}
