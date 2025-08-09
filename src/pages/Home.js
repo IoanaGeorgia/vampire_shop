@@ -69,7 +69,6 @@ const Home = () => {
         </div>
       </div>
 
-
       <div className="aboutCompany">
         <div>
           <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
@@ -81,41 +80,45 @@ const Home = () => {
         </div>
         <div>
           <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
-         Monday to Friday
+          Monday to Friday
         </div>
         <div>
           <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
-        9:00PM to 6AM
+          9:00PM to 6AM
         </div>
       </div>
 
-          <div className="contactUs">
-        <p className="title">
-            Contact us to make a purchase!*
-        </p>
+      <div className="contactUs">
+        <p className="title">Contact us to make a purchase!*</p>
         <p className="phone">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
-            Phone: 0799111111
-             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
+          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
+          Phone: 0799111111
+          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
+        </p>
 
-            </p>
-          
-        
         <p>or fill out this form and we will contact you:</p>
 
-            <form action="/submit" method="POST">
-            <label for="name">Name:</label><br />
-            <input type="text" id="name" name="name" required /><br /><br />
+        <form action="/submit" method="POST">
+          <label for="name">Name:</label>
+          <br />
+          <input type="text" id="name" name="name" required />
+          <br />
+          <br />
 
-            <label for="email">Email:</label><br />
-            <input type="email" id="email" name="email" required /><br /><br />
+          <label for="email">Email:</label>
+          <br />
+          <input type="email" id="email" name="email" required />
+          <br />
+          <br />
 
-            <button type="submit">Submit</button>
-            </form>
+          <button type="submit">Submit</button>
+        </form>
 
-    <p className="small">*for discretion purposes, orders can be taken only by phone or other one-time means of communication. Thank you for your understanding.</p>
-    
-    </div>
+        <p className="small">
+          *for discretion purposes, orders can be taken only by phone or other
+          one-time means of communication. Thank you for your understanding.
+        </p>
+      </div>
 
       <div className="bloodAdvice">
         <p>
