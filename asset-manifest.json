@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vampire_shop/static/css/main.83fac75c.css",
+    "main.js": "/vampire_shop/static/js/main.1c152bbd.js",
+    "static/js/453.b06529cc.chunk.js": "/vampire_shop/static/js/453.b06529cc.chunk.js",
+    "index.html": "/vampire_shop/index.html",
+    "main.83fac75c.css.map": "/vampire_shop/static/css/main.83fac75c.css.map",
+    "main.1c152bbd.js.map": "/vampire_shop/static/js/main.1c152bbd.js.map",
+    "453.b06529cc.chunk.js.map": "/vampire_shop/static/js/453.b06529cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83fac75c.css",
+    "static/js/main.1c152bbd.js"
+  ]
+}
