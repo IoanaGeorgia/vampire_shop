@@ -1,14 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Header from './pages/Header';
+import Cellar from './pages/Cellar';
+import Footer from './pages/Footer';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/vampire_shop">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cellar" element={<Cellar />} />
       </Routes>
-    </Router>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

@@ -1,10 +1,37 @@
+import testTubeImg from "../images/blod_test.png"
+
 const Home = () => {
   return (
     <div className="homeWrapper">
-      <img
-        className="bannerImg"
-        src="https://i.giphy.com/8xUpOuaJL61KEIA55f.webp"
-      ></img>
+      <div className="heroWrapper">
+        <div className="hero">
+          <p className="title">Enjoy drinking blood?</p>
+          <div className="wrapper">
+            <div>
+              <img src={testTubeImg}></img>
+            </div>
+
+            <div>
+              <p>AB+</p>
+              <p>AB would be the ultimate top-shelf cocktail—rare, complex, and delightfully decadent with a smooth, perfectly balanced finish.</p>
+            </div>
+
+            <div>
+              <img src={testTubeImg}></img>
+            </div>
+
+
+            <div>
+               <p>0+</p>
+               <p>
+                Type O is like a pure, high-proof classic vintage—rich, smooth, and universally satisfying.
+               </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
       <div className="welcomeWrapper">
         <p className="title">Welcome to our Blood shop!</p>
@@ -12,10 +39,6 @@ const Home = () => {
       </div>
 
       <div className="bloodTypesWrapper">
-        <p className="description">
-          New to drinking blood? Check out our summary about each blood type
-          below.
-        </p>
         <div className="bloodType">
           <img src="https://i.giphy.com/tb8vxqwKY4KyKBHOPg.webp"></img>
           <div>
@@ -69,6 +92,7 @@ const Home = () => {
         </div>
       </div>
 
+    <div className="divider"></div>
       <div className="aboutCompany">
         <div>
           <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
@@ -88,6 +112,7 @@ const Home = () => {
         </div>
       </div>
 
+<div className="divider"></div>
       <div className="contactUs">
         <p className="title">Contact us to make a purchase!*</p>
         <p className="phone">
@@ -120,7 +145,9 @@ const Home = () => {
         </p>
       </div>
 
+<div className="divider" id="tips"></div>
       <div className="bloodAdvice">
+        <p className="title">New to blood drinking?</p>
         <p>
           <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif"></img>
           Blood drinking tips and tricks for our lovely vampires out there
