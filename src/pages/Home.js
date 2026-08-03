@@ -1,6 +1,33 @@
-import testTubeImg from "../images/blod_test.png"
+import { useState } from "react";
+import testTubeImg from "../images/blod_test.png";
 
 const Home = () => {
+  const [errors, setErrors] = useState({ email: false, userName: false });
+  const [data, setData] = useState({ email: "", userName: "" });
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const nameRegex = /^[\p{L}\s'-]{2,50}$/u;
+
+  const submitData = (e) => {
+    e.preventDefault();
+
+    if (!data.email) {
+      setErrors((prev) => ({ ...prev, email: true }));
+    } else {
+      if (!emailRegex.test(data.email)) {
+        setErrors((prev) => ({ ...prev, email: true }));
+      }
+    }
+
+    if (!data.userName) {
+      setErrors((prev) => ({ ...prev, userName: true }));
+    } else {
+      if (!nameRegex.test(data.userName.trim())) {
+        setErrors((prev) => ({ ...prev, userName: true }));
+      }
+    }
+  };
+
   return (
     <div className="homeWrapper">
       <div className="heroWrapper">
@@ -13,25 +40,26 @@ const Home = () => {
 
             <div>
               <p>AB+</p>
-              <p>AB would be the ultimate top-shelf cocktail—rare, complex, and delightfully decadent with a smooth, perfectly balanced finish.</p>
+              <p>
+                AB would be the ultimate top-shelf cocktail—rare, complex, and
+                delightfully decadent with a smooth, perfectly balanced finish.
+              </p>
             </div>
 
             <div>
               <img src={testTubeImg}></img>
             </div>
 
-
             <div>
-               <p>0+</p>
-               <p>
-                Type O is like a pure, high-proof classic vintage—rich, smooth, and universally satisfying.
-               </p>
-
+              <p>0+</p>
+              <p>
+                Type O is like a pure, high-proof classic vintage—rich, smooth,
+                and universally satisfying.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      
 
       <div className="welcomeWrapper">
         <p className="title">Welcome to our Blood shop!</p>
@@ -92,7 +120,7 @@ const Home = () => {
         </div>
       </div>
 
-    <div className="divider"></div>
+      <div className="divider"></div>
       <div className="aboutCompany">
         <div>
           <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
@@ -112,31 +140,52 @@ const Home = () => {
         </div>
       </div>
 
-<div className="divider"></div>
+      <div className="divider"></div>
       <div className="contactUs">
         <p className="title">Contact us to make a purchase!*</p>
         <p className="phone">
-          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
+          <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif"></img>
           Phone: 0799111111
-          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXd3OXEydGI4bGJieWtkang3MGZmeDEya2FubXBsMHJyMndiZzlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lIC8sATLdur9pvyR8k/giphy.gif"></img>
         </p>
 
         <p>or fill out this form and we will contact you:</p>
 
         <form action="/submit" method="POST">
           <label for="name">Name:</label>
-          <br />
-          <input type="text" id="name" name="name" required />
-          <br />
-          <br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={data.userName}
+            onInput={(e) => {
+              setData((prev) => ({
+                ...prev,
+                userName: e.target.value,
+              }));
+            }}
+          />
+
+          {errors.userName && <div className="error">Invalid name format or name missing!</div>}
 
           <label for="email">Email:</label>
-          <br />
-          <input type="email" id="email" name="email" required />
-          <br />
-          <br />
 
-          <button type="submit">Submit</button>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={data.email}
+            onInput={(e) => {
+              setData((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }));
+            }}
+          />
+          {errors.email && <div className="error">Invalid email format or email missing!</div>}
+
+          <button type="submit" onClick={submitData}>
+            Submit
+          </button>
         </form>
 
         <p className="small">
@@ -145,7 +194,7 @@ const Home = () => {
         </p>
       </div>
 
-<div className="divider" id="tips"></div>
+      <div className="divider" id="tips"></div>
       <div className="bloodAdvice">
         <p className="title">New to blood drinking?</p>
         <p>

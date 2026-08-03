@@ -1,12 +1,10 @@
 import testTubeImg from "../images/blod_test.png";
 import { cellarData } from "../cellarData";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Cellar = () => {
   const [pageItems, setPageItems] = useState(8);
-
   const [allData, setAllData] = useState(cellarData);
-
   const [itemsOnPage, setItemsOnPage] = useState(allData.slice(0, pageItems));
 
   const [toggleBlood, setToggleBlood] = useState(false);
@@ -15,9 +13,36 @@ const Cellar = () => {
   const [bloodType, setBloodType] = useState("");
   const [year, setSelectedYear] = useState("");
 
+  const bloodDropdownRef = useRef(null);
+  const yearDropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        bloodDropdownRef.current &&
+        !bloodDropdownRef.current.contains(event.target)
+      ) {
+        setToggleBlood(false);
+      }
+
+      if (
+        yearDropdownRef.current &&
+        !yearDropdownRef.current.contains(event.target)
+      ) {
+        setToggleYear(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const bloodTypes = [...new Set(cellarData.map((item) => item.bloodType))];
   const years = [...new Set(cellarData.map((item) => item.year))].sort(
-    (a, b) => a - b,
+    (a, b) => a - b
   );
 
   const seeMore = () => {
@@ -35,13 +60,17 @@ const Cellar = () => {
   };
 
   const setBlood = (type) => {
+    setToggleBlood(false);
     if (type) {
       setBloodType(type);
       let selectedBloodItems;
       if (year) {
-        selectedBloodItems = allData.filter((item) => item.bloodType === type);
+        selectedBloodItems = cellarData.filter(
+          (item) => item.bloodType === type && item.year === year
+        );
+      } else {
+        selectedBloodItems = cellarData.filter((item) => item.bloodType === type);
       }
-      selectedBloodItems = cellarData.filter((item) => item.bloodType === type);
       setAllData(selectedBloodItems);
       setItemsOnPage(selectedBloodItems.slice(0, pageItems));
     } else {
@@ -49,15 +78,17 @@ const Cellar = () => {
     }
   };
 
-  const setYear = (year) => {
-    if (year) {
-      setSelectedYear(year);
+  const setYear = (selectedYear) => {
+    setToggleYear(false);
+    if (selectedYear) {
+      setSelectedYear(selectedYear);
       let selectedYearItems;
-
       if (bloodType) {
-        selectedYearItems = allData.filter((item) => item.year === year);
+        selectedYearItems = cellarData.filter(
+          (item) => item.year === selectedYear && item.bloodType === bloodType
+        );
       } else {
-        selectedYearItems = cellarData.filter((item) => item.year === year);
+        selectedYearItems = cellarData.filter((item) => item.year === selectedYear);
       }
       setAllData(selectedYearItems);
       setItemsOnPage(selectedYearItems.slice(0, pageItems));
@@ -69,7 +100,7 @@ const Cellar = () => {
   return (
     <div className="cellarWrapper">
       <div className="inputWrapper">
-        <div className="dropdownWrapper">
+        <div className="dropdownWrapper" ref={bloodDropdownRef}>
           <div
             className="dropdown"
             role="button"
@@ -80,25 +111,24 @@ const Cellar = () => {
           {toggleBlood && (
             <div className="wrapper">
               <div className="innerWrapper">
-                <div role="button" value={""} onClick={() => setBlood("")}>
+                <div role="button" onClick={() => setBlood("")}>
                   All blood types
                 </div>
-                {bloodTypes.length &&
-                  bloodTypes.map((type) => (
-                    <div
-                      role="button"
-                      value={type}
-                      onClick={() => setBlood(type)}
-                    >
-                      {type}
-                    </div>
-                  ))}
+                {bloodTypes.map((type) => (
+                  <div
+                    key={type}
+                    role="button"
+                    onClick={() => setBlood(type)}
+                  >
+                    {type}
+                  </div>
+                ))}
               </div>
             </div>
           )}
         </div>
 
-        <div className="dropdownWrapper">
+        <div className="dropdownWrapper" ref={yearDropdownRef}>
           <div
             className="dropdown"
             role="button"
@@ -109,19 +139,18 @@ const Cellar = () => {
           {toggleYear && (
             <div className="wrapper">
               <div className="innerWrapper">
-                <div role="button" value={""} onClick={() => setYear("")}>
+                <div role="button" onClick={() => setYear("")}>
                   All years
                 </div>
-                {years.length &&
-                  years.map((year) => (
-                    <div
-                      role="button"
-                      value={year}
-                      onClick={() => setYear(year)}
-                    >
-                      {year}
-                    </div>
-                  ))}
+                {years.map((y) => (
+                  <div
+                    key={y}
+                    role="button"
+                    onClick={() => setYear(y)}
+                  >
+                    {y}
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -129,12 +158,13 @@ const Cellar = () => {
 
         <button onClick={resetFilters}>Show all</button>
       </div>
+
       <div className="items-wrapper">
         {itemsOnPage.length ? (
-          itemsOnPage.map((item) => (
-            <div className="preWrapper">
+          itemsOnPage.map((item, index) => (
+            <div className="preWrapper" key={item.id || index}>
               <div className="item">
-                <img src={testTubeImg}></img>
+                <img src={testTubeImg} alt="Test tube" />
                 <div className="info">
                   <span>{item.bloodType}</span>, {item.year}
                 </div>

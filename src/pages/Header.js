@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
   return (
@@ -13,9 +13,9 @@ const Header = () => {
       </div>
       <div className="links">
         <Link to="/cellar">Vintage Cellar</Link>
-        <a>Reserve Collection</a>
-        <a href="#tips">Vampire tips</a>
-        <a>Our mission</a>
+         <Link to="/our-collection">Reserved Collection</Link>
+        <Link smooth to="/#tips">Vampire tips</Link>
+        <Link to="/mission">Our mission</Link>
       </div>
     </header>
   );
