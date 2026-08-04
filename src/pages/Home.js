@@ -35,7 +35,7 @@ const Home = () => {
           <p className="title">Enjoy drinking blood?</p>
           <div className="wrapper">
             <div>
-              <img src={testTubeImg}></img>
+              <img src={testTubeImg} alt="test tube" width="230px" height="230px" fetchPriority="high"></img>
             </div>
 
             <div>
@@ -47,7 +47,7 @@ const Home = () => {
             </div>
 
             <div>
-              <img src={testTubeImg}></img>
+              <img src={testTubeImg} alt="test tube" width="230px" height="230px" fetchPriority="high"></img>
             </div>
 
             <div>
@@ -68,7 +68,7 @@ const Home = () => {
 
       <div className="bloodTypesWrapper">
         <div className="bloodType">
-          <img src="https://i.giphy.com/tb8vxqwKY4KyKBHOPg.webp"></img>
+          <img src="https://i.giphy.com/tb8vxqwKY4KyKBHOPg.webp" alt="Blood drop type A-" width="152px" height="172px"></img>
           <div>
             <p className="title">BLOOD TYPE A – The Delicate Vintage</p>
             <p>
@@ -81,7 +81,7 @@ const Home = () => {
         </div>
 
         <div className="bloodType">
-          <img src="https://i.giphy.com/A4IvKFhXBKM7ZSmRSx.webp"></img>
+          <img src="https://i.giphy.com/A4IvKFhXBKM7ZSmRSx.webp" alt="Blood drop type B-" width="152px" height="172px"></img>
           <div>
             <p className="title">BLOOD TYPE B – The Wild Blend</p>
             <p>
@@ -94,7 +94,9 @@ const Home = () => {
         </div>
 
         <div className="bloodType">
-          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTM3Y291eW55dmp1cXd0ejN3N2NhanpuN2V0OXQ4c2pnam85eXhyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XEq1OBIP00TXGYzoxe/giphy.gif"></img>
+          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTM3Y291eW55dmp1cXd0ejN3N2NhanpuN2V0OXQ4c2pnam85eXhyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XEq1OBIP00TXGYzoxe/giphy.gif"
+          width="152px" height="172px"
+          alt="Blood drop type 0-"></img>
           <div>
             <p className="title">BLOOD TYPE O – The Classic Crimson</p>
             <p>
@@ -107,7 +109,7 @@ const Home = () => {
         </div>
 
         <div className="bloodType">
-          <img src="https://i.giphy.com/gaWLsQWFYNuUGGTaXS.webp"></img>
+          <img src="https://i.giphy.com/gaWLsQWFYNuUGGTaXS.webp" alt="Blood drop type AB-" width="152px" height="172px"></img>
           <div>
             <p className="title">BLOOD TYPE AB – The Rare Reserve</p>
             <p>
@@ -123,19 +125,19 @@ const Home = () => {
       <div className="divider"></div>
       <div className="aboutCompany">
         <div>
-          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
+          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif" alt="wine glass" width="50px" height="50px"></img>
           Worldwide shipping
         </div>
         <div>
-          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
+          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif" alt="wine glass"  width="50px" height="50px"></img>
           Discreet packaging
         </div>
         <div>
-          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
+          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif" alt="wine glass"  width="50px" height="50px"></img>
           Monday to Friday
         </div>
         <div>
-          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif"></img>
+          <img src="https://freight.cargo.site/w/800/h/800/q/75/i/Q1705464358092062748521079544106/wine_swirl_v8_more_spill_100x1000.gif" alt="wine glass"  width="50px" height="50px"></img>
           9:00PM to 6AM
         </div>
       </div>
@@ -144,7 +146,7 @@ const Home = () => {
       <div className="contactUs">
         <p className="title">Contact us to make a purchase!*</p>
         <p className="phone">
-          <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif"></img>
+          <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif" alt="drops falling" width="30px" height="32px"></img>
           Phone: 0799111111
         </p>
 
@@ -198,7 +200,7 @@ const Home = () => {
       <div className="bloodAdvice">
         <p className="title">New to blood drinking?</p>
         <p>
-          <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif"></img>
+          <img src="https://media.tenor.com/WAWMm1S7Ss0AAAAj/fire-fireball.gif" alt="drops falling" width="50px" height="54px"></img>
           Blood drinking tips and tricks for our lovely vampires out there
         </p>
         <ul>

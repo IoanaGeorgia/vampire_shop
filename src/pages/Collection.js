@@ -37,7 +37,7 @@ const Collection = () => {
           </div>
 
           <div className="item">
-            <img src={testTubeImg} alt="Test tube" />
+            <img src={testTubeImg} alt="Test tube" width="230px" height="230px" />
             <div className="info">
               <span>B</span>, 1600
             </div>

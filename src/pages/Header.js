@@ -4,10 +4,12 @@ const Header = () => {
   return (
     <header>
       <div className="image-wrapper">
-        <Link to="/">
+        <Link to="/" aria-label="Go to Vampire Shop">
         <img
         className="bannerImg"
         src="https://i.giphy.com/8xUpOuaJL61KEIA55f.webp"
+        alt="sharp teeth covered in blood" 
+        width="200px" height="153px"
       ></img>
       </Link>
       </div>

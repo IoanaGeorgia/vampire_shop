@@ -47,6 +47,9 @@ a {
   text-decoration: none;
 }
 
+img{
+  height:unset;
+}
 button, a{
   cursor: pointer;
 }
@@ -249,7 +252,7 @@ footer p {
   gap: var(--defaultPaddingBig);
 }
 
-.hero .wrapper>div {
+.hero .wrapper > div {
   position: relative;
   width: 100%;
   height: 420px;
@@ -290,13 +293,13 @@ footer p {
 }
 
 @media(max-width:1209px) {
-  .hero .wrapper>div {
+  .hero .wrapper > div {
 
     height: 320px;
 
   }
 
-  .hero .wrapper>div p {
+  .hero .wrapper > div p {
     font-size: 15px;
     max-width: 150px;
   }
@@ -309,14 +312,15 @@ footer p {
 }
 
 @media(max-width:909px) {
-  .hero .wrapper>div:first-of-type {
+  .hero .wrapper > div:first-of-type {
     display: none;
   }
 }
 
 
+
 @media(max-width:720px) {
-  .hero .wrapper>div:last-of-type {
+  .hero .wrapper > div:last-of-type {
     display: none;
   }
 
@@ -328,9 +332,26 @@ footer p {
 
 
 @media(max-width:512px) {
-  .hero .wrapper>div:nth-of-type(2) {
+
+    .hero .wrapper > div{
+    max-width:312px;
+  }
+
+  .hero .wrapper > div:nth-of-type(2) {
     display: none;
   }
+
+
+}
+
+
+.homeWrapper .welcomeWrapper,
+.homeWrapper .bloodTypesWrapper,
+.homeWrapper .bloodAdvice,
+.homeWrapper .aboutCompany,
+.homeWrapper .contactUs{
+  padding-left:var(--defaultPadding);
+  padding-right:var(--defaultPadding);
 }
 
 
@@ -338,7 +359,7 @@ footer p {
 .homeWrapper .welcomeWrapper {
   max-width: var(--container-max-width);
   margin: 2rem auto 0;
-  padding: 2rem 0;
+  padding: 2rem var(--defaultPadding);
   color: var(--primary-text);
   text-align: center;
 }
@@ -571,6 +592,14 @@ footer p {
 .bloodAdvice li span {
   color: var(--primary-text);
   font-size: inherit;
+}
+
+@media(max-width:828px){
+  .bloodAdvice p{
+    flex-direction: column
+    ;
+
+  }
 }
 
 

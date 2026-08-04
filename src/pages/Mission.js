@@ -15,7 +15,7 @@ const Mission = () => {
         who openly choose to give up their blood.
       </p>
 
-      <img src={book}></img>
+      <img src={book} alt="gothic book" width="100px" height="136px"></img>
 
 
       <div className="wrapper">

@@ -164,7 +164,7 @@ const Cellar = () => {
           itemsOnPage.map((item, index) => (
             <div className="preWrapper" key={item.id || index}>
               <div className="item">
-                <img src={testTubeImg} alt="Test tube" />
+                <img src={testTubeImg} alt="Test tube" width="230px" height="230px" />
                 <div className="info">
                   <span>{item.bloodType}</span>, {item.year}
                 </div>

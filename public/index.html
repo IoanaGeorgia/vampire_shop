@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="https://i.giphy.com/8xUpOuaJL61KEIA55f.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="" />
-  
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   
-    <title>Blood shop</title>
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="https://i.giphy.com/8xUpOuaJL61KEIA55f.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="A shop site for particular needs" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blood Shop">
+  <meta property="og:description" content="A shop site for particular needs">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blood Shop">
+  <meta name="twitter:description" content="A shop site for particular needs">
+  <meta name="twitter:image" content="https://i.giphy.com/8xUpOuaJL61KEIA55f.webp">
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <title>Blood shop</title>
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</body>
+
 </html>
