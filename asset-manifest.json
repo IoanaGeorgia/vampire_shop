@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vampire_shop/static/css/main.22654d6f.css",
-    "main.js": "/vampire_shop/static/js/main.a1b26d45.js",
+    "main.js": "/vampire_shop/static/js/main.52baa2ce.js",
     "static/js/453.b06529cc.chunk.js": "/vampire_shop/static/js/453.b06529cc.chunk.js",
     "static/media/book.png": "/vampire_shop/static/media/book.ad26dfe890de1b174ede.png",
     "static/media/mission.jpeg": "/vampire_shop/static/media/mission.7540b8aff260c47fc063.jpeg",
@@ -11,11 +11,11 @@
     "static/media/cellar.jpg": "/vampire_shop/static/media/cellar.b5986bcc1a6451e06ce2.jpg",
     "index.html": "/vampire_shop/index.html",
     "main.22654d6f.css.map": "/vampire_shop/static/css/main.22654d6f.css.map",
-    "main.a1b26d45.js.map": "/vampire_shop/static/js/main.a1b26d45.js.map",
+    "main.52baa2ce.js.map": "/vampire_shop/static/js/main.52baa2ce.js.map",
     "453.b06529cc.chunk.js.map": "/vampire_shop/static/js/453.b06529cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.22654d6f.css",
-    "static/js/main.a1b26d45.js"
+    "static/js/main.52baa2ce.js"
   ]
 }
