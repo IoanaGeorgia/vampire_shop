@@ -17,8 +17,7 @@ const Cellar = () => {
   const bloodDropdownRef = useRef(null);
   const yearDropdownRef = useRef(null);
 
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertInfo, setAlertInfo] = useState({"type":"", "year":""})
+  const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -46,7 +45,7 @@ const Cellar = () => {
 
   const bloodTypes = [...new Set(cellarData.map((item) => item.bloodType))];
   const years = [...new Set(cellarData.map((item) => item.year))].sort(
-    (a, b) => a - b
+    (a, b) => a - b,
   );
 
   const seeMore = () => {
@@ -70,10 +69,12 @@ const Cellar = () => {
       let selectedBloodItems;
       if (year) {
         selectedBloodItems = cellarData.filter(
-          (item) => item.bloodType === type && item.year === year
+          (item) => item.bloodType === type && item.year === year,
         );
       } else {
-        selectedBloodItems = cellarData.filter((item) => item.bloodType === type);
+        selectedBloodItems = cellarData.filter(
+          (item) => item.bloodType === type,
+        );
       }
       setAllData(selectedBloodItems);
       setItemsOnPage(selectedBloodItems.slice(0, pageItems));
@@ -89,23 +90,32 @@ const Cellar = () => {
       let selectedYearItems;
       if (bloodType) {
         selectedYearItems = cellarData.filter(
-          (item) => item.year === selectedYear && item.bloodType === bloodType
-        )
+          (item) => item.year === selectedYear && item.bloodType === bloodType,
+        );
       } else {
-        selectedYearItems = cellarData.filter((item) => item.year === selectedYear);
+        selectedYearItems = cellarData.filter(
+          (item) => item.year === selectedYear,
+        );
       }
       setAllData(selectedYearItems);
-      setItemsOnPage(selectedYearItems.slice(0, pageItems))
+      setItemsOnPage(selectedYearItems.slice(0, pageItems));
     } else {
-      resetFilters()
+      resetFilters();
     }
   };
 
-  const addItemToCart = (type, year) => {
+  const addItemToCart = (type, year, id) => {
+    const newAlert = {
+      id: Date.now() + Math.random(),
+      bloodType,
+      year,
+    };
+    setAlerts((prev) => [...prev, newAlert]);
+  };
 
-    setAlertInfo(type, year)
-    setShowAlert(true)
-  }
+  const closeAlert = (id) => {
+    setAlerts((prev) => prev.filter((alert) => alert.id !== id));
+  };
 
   return (
     <div className="cellarWrapper">
@@ -125,11 +135,7 @@ const Cellar = () => {
                   All blood types
                 </div>
                 {bloodTypes.map((type) => (
-                  <div
-                    key={type}
-                    role="button"
-                    onClick={() => setBlood(type)}
-                  >
+                  <div key={type} role="button" onClick={() => setBlood(type)}>
                     {type}
                   </div>
                 ))}
@@ -153,11 +159,7 @@ const Cellar = () => {
                   All years
                 </div>
                 {years.map((y) => (
-                  <div
-                    key={y}
-                    role="button"
-                    onClick={() => setYear(y)}
-                  >
+                  <div key={y} role="button" onClick={() => setYear(y)}>
                     {y}
                   </div>
                 ))}
@@ -174,12 +176,25 @@ const Cellar = () => {
           itemsOnPage.map((item, index) => (
             <div className="preWrapper" key={item.id || index}>
               <div className="item">
-                <img src={testTubeImg} alt="Test tube" width="230px" height="230px" />
+                <img
+                  src={testTubeImg}
+                  alt="Test tube"
+                  width="230px"
+                  height="230px"
+                />
                 <div className="info">
                   <span>{item.bloodType}</span>, {item.year}
                 </div>
               </div>
-              <button onClick={()=>addItemToCart(item.bloodType, item.year)}>Add to cart</button>
+              <button
+                onClick={() =>
+                  addItemToCart(item.bloodType, item.year, item.id)
+                }
+              >
+                Add to cart
+              </button>
+
+              {/* {showAlert[item.id] &&  <Alert type={item.bloodType} year={item.year} closeAlert={() => closeAlert(item.id)} />} */}
             </div>
           ))
         ) : (
@@ -193,7 +208,16 @@ const Cellar = () => {
         )}
       </div>
 
-     {showAlert &&  <Alert type={alertInfo.type} year={alertInfo.year} onClick="" />}
+      <div className="alert-container">
+        {alerts.map((alert) => (
+          <Alert
+            key={alert.id}
+            type={alert.bloodType}
+            year={alert.year}
+            closeAlert={() => closeAlert(alert.id)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
