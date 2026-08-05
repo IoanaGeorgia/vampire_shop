@@ -21,9 +21,9 @@ const Mission = () => {
       <div className="wrapper">
         <div>
           <p>1. Policy</p>
-          <div>Our company makes sure to taste and test the products before shipping them.
+          <div>Our company makes <span>sure</span> to taste and test the products before shipping them.
             The conditions in which the products are being stored are being bi-yearly verified by
-            The Association, with a report being issues and publicly available on THEIR site.
+            The Association, with a report <span>being</span> issues and publicly available on THEIR site.
           </div>
         </div>
 
@@ -33,10 +33,10 @@ const Mission = () => {
           <div>
             Hiding in the shadows has been the main reason behind our species' survival. We are openly and forever
             commited to keeping our existence private, as per THEIR notice 3/927/4. Our company abides by the laws
-            set in place in the Great Year and we follow them in all our business practices.
-            As per such, none of the individuals we farm from are aware of the use of their blood,
+            set in <span>place</span> in the Great Year and we follow them in all our business practices.
+            As per such, none of the <span>individuals</span> we farm from are aware of the use of their blood,
             nor are they aware of our existence. The background check and psychological assessment
-            are the means we use to protect ourselves from possible allegations and rumours.
+            are the means we use to protect ourselves from possible <span>allegations</span> and rumours.
           </div>
         </div>
 
@@ -48,7 +48,7 @@ const Mission = () => {
           <div>
               Our products originate from 100% healthy individuals. Each of them is tested periodically for
               multiple diseases as per THEIR notice from 67/38757/45. Supplimentary tests are being run to comply with the
-              new Directives, most exactlly 5/345, 8/35 and 6/356, including drug testing, new poisons testing, 
+              new Directives, most exactlly 5/345, 8/35 and 6/356, including drug <span>testing</span>, new poisons testing, 
               smoking and hormol imbalances due to natural or artificial factors. 
           </div>
         </div>
@@ -57,10 +57,10 @@ const Mission = () => {
           <p>4. Sustainable</p>
           <div>
             All products originate from willing donors, who are being periodically checked for health and mind issues,
-            and they also perform psychological assessment to make sure the decision is theirs and only theirs.
+            and they also perform <span>psychological</span> assessment to make sure the decision is theirs and only theirs.
             Each individual must provide a prood of their family tree, as well as a background regarding former relations
-            with different other vampires. Each profile is submitted to review by the Assiciation and no other
-            action is taking place without THEIR explicit consent.
+            with different other vampires. Each profile is <span>submitted</span> to review by the Assiciation and no other
+            action is <span>taking</span> place without THEIR explicit consent.
           </div>
         </div>
 

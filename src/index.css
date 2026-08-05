@@ -589,7 +589,8 @@ footer p {
   font-size: var(--default-small-size);
 }
 
-.bloodAdvice li span {
+.bloodAdvice li span,
+.missionPage .wrapper span {
   color: var(--primary-text);
   font-size: inherit;
 }
@@ -812,6 +813,11 @@ footer p {
   color: var(--primary-text);
 }
 
+
+.missionPage .wrapper  div{
+  font-size:var(--default-small-size);
+}
+
 .missionPage .disclaimer{
   max-width:var(--container-max-width);
   width:100%;
@@ -865,4 +871,28 @@ footer p {
   justify-content: center;
   align-items: center;
   gap: var(--defaultPaddingBig);
+}
+
+
+.alertWrapper{
+  position: fixed;
+  right:20px;
+  bottom:20px;
+  max-width:400px;
+  width:100%;
+  padding:var(--defaultPadding);
+  border-radius:10px;
+  background-color: var(--primary-bg);
+  border:1px solid #ff0000;
+  display: flex;
+  align-items:center;
+}
+
+.alertWrapper img{
+  max-width:40px;
+  width:100%;
+}
+
+.alertWrapper p{
+  font-size:var(--default-small-size);
 }

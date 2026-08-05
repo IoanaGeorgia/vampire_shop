@@ -6,7 +6,7 @@ import Cellar from './pages/Cellar';
 import Footer from './pages/Footer';
 import Mission from './pages/Mission';
 import Collection from './pages/Collection';
-import ScrollToTop from './pages/ScroolToTop';
+import ScrollToTop from './pages/ScrollToTop';
 
 
 function App() {

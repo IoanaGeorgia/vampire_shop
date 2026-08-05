@@ -1,6 +1,7 @@
 import testTubeImg from "../images/blod_test.png";
 import { cellarData } from "../cellarData";
 import { useState, useRef, useEffect } from "react";
+import Alert from "./Alert";
 
 const Cellar = () => {
   const [pageItems, setPageItems] = useState(8);
@@ -15,6 +16,9 @@ const Cellar = () => {
 
   const bloodDropdownRef = useRef(null);
   const yearDropdownRef = useRef(null);
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertInfo, setAlertInfo] = useState({"type":"", "year":""})
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -86,16 +90,22 @@ const Cellar = () => {
       if (bloodType) {
         selectedYearItems = cellarData.filter(
           (item) => item.year === selectedYear && item.bloodType === bloodType
-        );
+        )
       } else {
         selectedYearItems = cellarData.filter((item) => item.year === selectedYear);
       }
       setAllData(selectedYearItems);
-      setItemsOnPage(selectedYearItems.slice(0, pageItems));
+      setItemsOnPage(selectedYearItems.slice(0, pageItems))
     } else {
-      resetFilters();
+      resetFilters()
     }
   };
+
+  const addItemToCart = (type, year) => {
+
+    setAlertInfo(type, year)
+    setShowAlert(true)
+  }
 
   return (
     <div className="cellarWrapper">
@@ -169,7 +179,7 @@ const Cellar = () => {
                   <span>{item.bloodType}</span>, {item.year}
                 </div>
               </div>
-              <button>Add to cart</button>
+              <button onClick={()=>addItemToCart(item.bloodType, item.year)}>Add to cart</button>
             </div>
           ))
         ) : (
@@ -182,6 +192,8 @@ const Cellar = () => {
           </button>
         )}
       </div>
+
+     {showAlert &&  <Alert type={alertInfo.type} year={alertInfo.year} onClick="" />}
     </div>
   );
 };

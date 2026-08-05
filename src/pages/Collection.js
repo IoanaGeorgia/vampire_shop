@@ -10,7 +10,7 @@ const Collection = () => {
       <p className="description">
         We offer the possibility of access to our reserved collections to our
         most faithful users. The acquisition of such a limited and rare blood
-        can be discussed only by phone, followed by a meetin face to face as per
+        can be discussed only by phone, followed by a meeting face to face as per
         THEIR directive 43/45/5.
       </p>
 
