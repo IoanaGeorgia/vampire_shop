@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/vampire_shop/static/css/main.f2684566.css",
-    "main.js": "/vampire_shop/static/js/main.32a869a5.js",
+    "main.css": "/vampire_shop/static/css/main.63eb2591.css",
+    "main.js": "/vampire_shop/static/js/main.cc11d3b6.js",
     "static/js/453.b06529cc.chunk.js": "/vampire_shop/static/js/453.b06529cc.chunk.js",
     "static/media/book.png": "/vampire_shop/static/media/book.ad26dfe890de1b174ede.png",
     "static/media/mission.jpeg": "/vampire_shop/static/media/mission.7540b8aff260c47fc063.jpeg",
     "static/media/blod_test.png": "/vampire_shop/static/media/blod_test.96aa20229940d58ba1ce.png",
     "static/media/frame2.png": "/vampire_shop/static/media/frame2.2bda246d7972b86cd2d2.png",
     "static/media/bg.jpg": "/vampire_shop/static/media/bg.9a80d4cf2af25af0309f.jpg",
+    "static/media/cartbg.jpg": "/vampire_shop/static/media/cartbg.c560935f6a3d6b72bf77.jpg",
     "static/media/cellar.jpg": "/vampire_shop/static/media/cellar.b5986bcc1a6451e06ce2.jpg",
     "index.html": "/vampire_shop/index.html",
-    "main.f2684566.css.map": "/vampire_shop/static/css/main.f2684566.css.map",
-    "main.32a869a5.js.map": "/vampire_shop/static/js/main.32a869a5.js.map",
+    "main.63eb2591.css.map": "/vampire_shop/static/css/main.63eb2591.css.map",
+    "main.cc11d3b6.js.map": "/vampire_shop/static/js/main.cc11d3b6.js.map",
     "453.b06529cc.chunk.js.map": "/vampire_shop/static/js/453.b06529cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2684566.css",
-    "static/js/main.32a869a5.js"
+    "static/css/main.63eb2591.css",
+    "static/js/main.cc11d3b6.js"
   ]
 }
