@@ -1,8 +1,8 @@
 import testTubeImg from "../images/blod_test.png";
-import { cellarData } from "../cellarData";
-import { useState, useRef, useEffect } from "react";
 
 const Collection = () => {
+
+
   return (
     <div className="collectionWrapper">
       <p className="title">Our reserved collection</p>

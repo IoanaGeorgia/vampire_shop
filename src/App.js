@@ -7,6 +7,7 @@ import Footer from './pages/Footer';
 import Mission from './pages/Mission';
 import Collection from './pages/Collection';
 import ScrollToTop from './pages/ScrollToTop';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/cellar" element={<Cellar />} />
         <Route path="/mission" element={<Mission />} />
         <Route path="/our-collection" element={<Collection />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

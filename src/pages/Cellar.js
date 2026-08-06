@@ -2,11 +2,16 @@ import testTubeImg from "../images/blod_test.png";
 import { cellarData } from "../cellarData";
 import { useState, useRef, useEffect } from "react";
 import Alert from "./Alert";
+import { addToCart } from "../redux/cartSlice";
+import { useDispatch} from "react-redux";
 
 const Cellar = () => {
+
   const [pageItems, setPageItems] = useState(8);
   const [allData, setAllData] = useState(cellarData);
   const [itemsOnPage, setItemsOnPage] = useState(allData.slice(0, pageItems));
+
+  const dispatch = useDispatch()
 
   const [toggleBlood, setToggleBlood] = useState(false);
   const [toggleYear, setToggleYear] = useState(false);
@@ -111,6 +116,7 @@ const Cellar = () => {
       year,
     };
     setAlerts((prev) => [...prev, newAlert]);
+    dispatch(addToCart(id))
   };
 
   const closeAlert = (id) => {
@@ -171,6 +177,13 @@ const Cellar = () => {
         <button onClick={resetFilters}>Show all</button>
       </div>
 
+      <div className="disclaimer">
+        <p>Each test tube contains 500ml of blood</p>
+        <p>This cart is to estimate the costs of aquisition and to give you an overview
+          of your purchase. All purchases will be done exclusively by phone and the established procedure (see cart page for more details).
+        </p>
+      </div>
+
       <div className="items-wrapper">
         {itemsOnPage.length ? (
           itemsOnPage.map((item, index) => (
@@ -194,7 +207,6 @@ const Cellar = () => {
                 Add to cart
               </button>
 
-              {/* {showAlert[item.id] &&  <Alert type={item.bloodType} year={item.year} closeAlert={() => closeAlert(item.id)} />} */}
             </div>
           ))
         ) : (

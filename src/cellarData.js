@@ -288,3 +288,14 @@ export const cellarData = [
     description: "Matured to absolute perfection, presenting an insanely smooth and velvety body."
   }
 ];
+
+export const prices = {
+  "O+": 10,
+  "A+": 12,
+  "B+": 18,
+  "O-": 22,
+  "A-": 25,
+  "AB+": 30,
+  "B-": 40,
+  "AB-": 50,
+};
