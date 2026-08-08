@@ -112,7 +112,7 @@ const Cellar = () => {
   const addItemToCart = (type, year, id) => {
     const newAlert = {
       id: Date.now() + Math.random(),
-      bloodType,
+      bloodType:type,
       year,
     };
     setAlerts((prev) => [...prev, newAlert]);

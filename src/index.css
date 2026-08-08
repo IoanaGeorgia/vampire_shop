@@ -23,6 +23,15 @@
 
   --defaultPadding: 20px;
   --defaultPaddingBig: 40px;
+
+  --defaultFontSize: 1.1rem;
+}
+
+@media(max-width:576px){
+  :root{
+    --defaultFontSize:15px;
+    --defaultPaddingBig:30px;
+  }
 }
 
 
@@ -30,7 +39,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 1.1rem;
+  font-size: var(--defaultFontSize);
   letter-spacing: 1.1px;
 }
 
@@ -86,6 +95,12 @@ code {
   font-size: var(--title-rem);
   text-align: center;
   font-weight: bold;
+}
+
+@media(max-width:576px){
+  .title{
+    font-size: var(--title-small-rem);
+  }
 }
 
 /* dropdown */
@@ -270,7 +285,11 @@ footer p {
   font-size: var(--font-size-xs);
 }
 
-
+@media(max-width:576px){
+  footer p{
+    text-align: center;
+  }
+}
 
 
 /* Homepage */
@@ -1158,6 +1177,7 @@ footer p {
   justify-content: center;
   align-items: center;
   gap: var(--defaultPaddingBig);
+  flex-wrap: wrap;
 }
 
 
