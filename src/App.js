@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './pages/Header';
 import Cellar from './pages/Cellar';
@@ -21,6 +21,7 @@ function App() {
         <Route path="/mission" element={<Mission />} />
         <Route path="/our-collection" element={<Collection />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </BrowserRouter>
